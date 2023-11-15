@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "struts-2.5.dtd">
+<struts>
+   
+    <package name="default" namespace="/" extends="struts-default">
+    <default-action-ref name="index"></default-action-ref>
+      
+    <action name="index">
+    <result>views/Login.jsp</result>
+    </action>
+      
+      
+      
+      <action name = "Login" class = "org.sid.web.LoginAction" method = "execute">
+         <result name = "success">/views/index.jsp</result>
+         <result name = "error">/views/error.jsp</result>
+      </action>
+    
+    
+    
+	<action name = "ajouter" class = "org.sid.web.LoginAction" method = "addUsers">    
+    <result name = "success">views/index.jsp</result>
+    </action>
+    
+    <action name = "updatePassword"  class = "org.sid.web.LoginAction" method = "updatePas">    
+    <result name = "success">views/update.jsp</result>
+    </action>
+    
+    <action name = "review" class = "org.sid.web.LoginAction" method = "indexUser">    
+    <result name = "success">views/review.jsp</result>
+    
+    </action>
+   
+    <action name="save" class="org.sid.web.LoginAction" method="savePass">
+    		<result name="success">views/index.jsp</result>
+    	</action>
+    
+    <action name="NewClient" class="org.sid.web.ProduitAction" method="New">
+    <result name="success">views/creer.jsp</result>
+    </action>
+    
+    <action name="produits" class="org.sid.web.ProduitAction" method="index">
+    <result name="success">views/Produits.jsp</result>
+    </action>
+   
+    
+    <action name="comandes" class="org.sid.web.ProduitAction" method="comande">
+    <result name="success">views/Comandes.jsp</result>
+    </action>
+    
+    
+    
+    
+    <action name="facture" class="org.sid.web.ProduitAction" method="acmd">
+    <result name="success">views/facture.jsp</result>
+    <result name="input">views/facture.jsp</result>
+    </action>
+    
+    
+    <action name="indexCm" class="org.sid.web.ProduitAction" method="facture">
+    <result name="success">views/index.jsp</result>
+    </action>
+    
+    <action name="indexHome" class="org.sid.web.ProduitAction" method="indexH">
+    <result name="success">views/index.jsp</result>
+    </action>
+    
+     <action name="pdf" class="org.sid.web.ProduitAction" method="indexP">
+    <result name="success">views/index.jsp</result>
+    </action>
+    
+    </package>
+   
+</struts>
